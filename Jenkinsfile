@@ -16,7 +16,7 @@ pipeline {
 	   stage("Build maveen project"){
      steps {
         script {
-            bat returnStatus: true, script: 'mvn -f ./pom.xml -s clean package install && exit %ERRORLEVEL%'
+            bat returnStatus: true, script: 'mvn -f ./pom.xml clean package install && exit %ERRORLEVEL%'
                 }
            }
     }
