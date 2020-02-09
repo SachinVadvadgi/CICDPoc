@@ -13,10 +13,10 @@ pipeline {
    }
    
    stages {
-	   stage("Set Build Name"){
+	   stage("Build maveen project"){
      steps {
         script {
-            currentBuild.displayName = "${BuildNo}"
+            bat returnStatus: true, script: 'mvn -f ./pom.xml -s clean package install && exit %ERRORLEVEL%'
                 }
            }
     }
